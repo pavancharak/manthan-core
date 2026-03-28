@@ -1,34 +1,12 @@
-\# Manthan Core
+\# 🧠 Manthan Core — Overview
 
 
 
-> Deterministic, append-only, verifiable decision engine.
+Manthan Core is the \*\*deterministic decision engine\*\* of the Manthan system.
 
 
 
-\---
-
-
-
-\## What is Manthan Core?
-
-
-
-Manthan Core is a minimal system that:
-
-
-
-\- takes a decision (as a contract)
-
-\- evaluates it deterministically
-
-\- records it immutably
-
-\- proves its correctness via replay
-
-
-
-It is designed as the \*\*core layer of decision infrastructure\*\*.
+It is the most critical and \*\*non-negotiable layer\*\*.
 
 
 
@@ -36,131 +14,109 @@ It is designed as the \*\*core layer of decision infrastructure\*\*.
 
 
 
-\## Core Properties
+\## 🔒 Core Identity
 
 
 
-\### 1. Deterministic
+```text
 
-Same input → same output  
+Core is pure, deterministic, and immutable
 
-No randomness, no hidden state
+🧠 What Core Does
 
 
 
-\### 2. Append-only
+Manthan Core:
 
-All decisions are recorded  
 
-Nothing is overwritten or mutated
 
+evaluates decisions
 
+ensures determinism
 
-\### 3. Verifiable
+guarantees replay consistency
 
-Each decision is cryptographically linked (hash chain)
+🚫 What Core Does NOT Do
 
+no IO
 
+no database access
 
-\### 4. Replayable
+no API calls
 
-The system can re-run all decisions and verify:
+no randomness
 
-\- integrity
+no time-based logic
 
-\- determinism
+📦 Core Function
 
-\- correctness
+Decision = f(contract, config)
 
+🧩 Core Responsibilities
 
+evaluate contract using config
 
-\---
+return deterministic decision
 
+produce consistent output
 
+🔁 Core Position in System
 
-\## Architecture
+Adapter → Platform → Core → Decision
 
+🔐 Core Guarantees
 
+same input → same output
 
+no side effects
 
+replay-safe
 
-Decision Contract
+⚙️ Key Files
 
-↓
+core/
 
-Deterministic Engine
+├── index.ts
 
-↓
+├── engine/evaluate.ts
 
-Append-only Log (decision.log)
+├── replay.ts
 
-↓
+├── store/decision.store.ts
 
-Hash Chain (integrity)
+├── config/getConfig.ts
 
-↓
+├── types/decision.ts
 
-Replay + Verification
+🧠 Design Philosophy
 
+Make decisions pure, reproducible, and verifiable
 
+🧭 Version
 
 
 
-\---
+Manthan Core v0.6 — Locked
 
 
 
-\## Project Structure
+🏁 Summary
 
 
 
+Core is:
 
 
-src/
 
-├── engine/ # deterministic evaluation
+the brain of the system
 
-├── store/ # append-only log + hashing
+the source of truth for logic
 
-├── enforcement/ # decision outcome
+the foundation of trust
 
-├── types/ # contract definitions
+🔐 Identity
 
-├── replay.ts # verification engine
 
-└── test.ts # example run
 
-
-
-
-
-\---
-
-
-
-\## Run
-
-
-
-```bash
-
-npx ts-node src/test.ts
-
-What Happens
-
-A decision contract is created
-
-Engine evaluates it
-
-Result is stored in decision.log
-
-Entry is hashed and linked
-
-Replay verifies entire system
-
-Example Output
-
-RESULT: { action: 'ALLOW' }
-
-All decisions verified. System is consistent.
+Every decision is traceable, auditable, and built for trust.
 
